@@ -1,0 +1,18 @@
+编辑器扩展：
+
+添加自定义窗口，可参考：http://www.xuanyusong.com/archives/2211
+在Editor文件夹下创建一个AudioWindowEditor继承自EditorWindow
+添加点击菜单的按钮 [MenuItem("Test/test1")]//必须有子菜单
+创建窗口
+    static void CreatWindow()
+    {
+        Rect rect = new Rect(0, 0, 500, 500);//前两个参数表示的是距离左上角的位置，后面两个表示长和宽
+        AudioWindowEditor window = EditorWindow.GetWindowWithRect(typeof(AudioWindowEditor), rect, true) as AudioWindowEditor;
+        window.Show();
+    }
+绘制窗口
+（多查看手册API：搜索EditorGUILayout）
+
+
+保存和加载声音文件
+利用字典和文件的写入和删除进行操作
